@@ -19,7 +19,8 @@ float InvSqrt(float x)
         } convertor;
 
         convertor.floatPart = x;
-        convertor.intPart = 0x5f3759df - (convertor.intPart >> 1);//0x5f37642f 只用一次牛顿迭代是最好的，但是第二次后精度降低
+        convertor.intPart = 0x5f3759df - (convertor.intPart >> 1);
+		//0x5f37642f 只用一次牛顿迭代是最好的，但是第二次后精度降低
 		//0x5f375a86 实际测试最好的常数
         return convertor.floatPart*(1.5f - 0.4999f*x*convertor.floatPart*convertor.floatPart);
 }
